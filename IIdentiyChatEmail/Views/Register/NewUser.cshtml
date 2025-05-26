@@ -1,0 +1,120 @@
+﻿
+@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kayıt Ol - Identity Uygulaması</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://images.unsplash.com/photo-1592014600126-cdb2cec39b7a?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .register-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            color: white;
+        }
+
+            .register-card h4 {
+                text-align: center;
+                margin-bottom: 30px;
+                font-weight: 600;
+                color: #fff;
+            }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            height: 45px;
+            color: white;
+            padding-left: 15px;
+        }
+
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+        .btn-submit {
+            background-color: #ff6b6b;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+            .btn-submit:hover {
+                background-color: #ff4757;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <h4>Kayıt Ol</h4>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Adınız" asp-for="Name" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Soyadınız" asp-for="Surname" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Kullanıcı Adınız" asp-for="UserName" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Mailiniz" asp-for="Email" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Şifreniz" asp-for="Password" required />
+                </div>
+                <button class="btn-submit">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

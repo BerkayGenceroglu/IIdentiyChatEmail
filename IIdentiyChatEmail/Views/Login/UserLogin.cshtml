@@ -1,0 +1,125 @@
+﻿@model IIdentiyChatEmail.Models.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giriş Yap - Identity Uygulaması</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            color: white;
+        }
+
+            .login-card h4 {
+                text-align: center;
+                margin-bottom: 30px;
+                font-weight: 600;
+                color: #fff;
+            }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            height: 45px;
+            color: white;
+            padding-left: 15px;
+        }
+
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+        .btn-submit {
+            background-color: #1e90ff;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+            .btn-submit:hover {
+                background-color: #1c86ee;
+            }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+            .register-link a {
+                color: #ffc107;
+                font-weight: 600;
+                text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h4>Giriş Yap</h4>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Kullanıcı Adı" asp-for="Username" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Şifre" asp-for="Password" required />
+                </div>
+                <button class="btn-submit">Giriş Yap</button>
+            </form>
+            <div class="register-link">
+                Hesabın yok mu? <a href="/Register/NewUser/">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
